@@ -66,8 +66,8 @@ The CloudFormation template can be found in [Templates](/templates) folder.  The
 If you make changes and need to recreate the Cloudformation template, see the following steps:
 
 ```bash
-git clone *NEED REPO LINK*
-cd *NEED FOLDER NAME*
+git clone https://github.com/aws-samples/digav-blueprint
+cd digav-blueprint
 npm install
 npm run build 
 cdk synth
@@ -77,8 +77,8 @@ The updated CloudFormation template, named AwsDiGavBlueprint.template, will be l
 ### Option 2) AWS CDK Deployment
 
 ```bash
-git clone *NEED REPO LINK*
-cd *NEED FOLDER NAME*
+git clone https://github.com/aws-samples/digav-blueprint
+cd digav-blueprint
 npm install
 npm run build 
 cdk bootstrap
