@@ -36,7 +36,11 @@ export class ClientVpn extends core.Construct {
 
     vpnCertCustomResourceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'));
 
-    const vpnBucket = new s3.Bucket(this, 'VpnConfigBucket', {});
+    const vpnBucket = new s3.Bucket(this, 'VpnConfigBucket', {
+      encryption: s3.BucketEncryption.KMS_MANAGED,
+      enforceSSL: true,
+      versioned: true
+    });
 
     vpnBucket.grantReadWrite(vpnCertCustomResourceRole);
     
