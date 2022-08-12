@@ -31,6 +31,9 @@ export class ConfigRecorderEnabledPromise extends cdk.Construct {
             this.SkippedCreatingRecorder = false;
             
             const configBucket = new s3.Bucket(this, 'ConfigBucket',{       
+              encryption: s3.BucketEncryption.KMS_MANAGED,
+              enforceSSL: true,
+              versioned: true
             });
             
             this.ConfigDeliveryBucketName = configBucket.bucketName;
